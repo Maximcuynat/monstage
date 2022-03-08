@@ -1,0 +1,40 @@
+body
+{
+    background-color: whitesmoke;
+}
+
+footer
+{
+    background-color:rgba(140, 104, 150, 1);
+    width: 100%;
+    padding: 2%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.footer_logo
+{width: 30%;}
+
+.footer_link
+{
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+#footer_div_logo
+{
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 2%;
+}
+
+#footer_titre
+{
+    text-align: left;
+    color: whitesmoke;
+    text-decoration : underline;
+}
