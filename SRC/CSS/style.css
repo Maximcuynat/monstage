@@ -1,8 +1,47 @@
 body
 {
     background-color: whitesmoke;
+    font-family: Verdana;
 }
 
+/*===================================================================== HEADER */
+header
+{
+    background-color:rgba(140, 104, 150, 1);
+    color: whitesmoke;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.head_logo
+{
+    width: 25%;
+    padding: 3%;
+    margin-left: 30%;
+}
+
+.head_profil
+{
+    display: flex;
+    align-items: center;
+    padding: 1%;
+}
+
+.head_profil .NP
+{
+    margin: auto;
+}
+
+.head_profil .btn_menu
+{
+    font-size: larger;
+    text-decoration: none;
+    color: white;
+}
+
+/*===================================================================== FOOTER */
 footer
 {
     background-color:rgba(140, 104, 150, 1);
