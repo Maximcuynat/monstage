@@ -4,6 +4,7 @@ body
     font-family: Verdana;
 }
 
+
 /*===================================================================== HEADER */
 header
 {
@@ -15,11 +16,14 @@ header
     align-items: center;
 }
 
+.head_titre
+{ text-shadow: 2px 2px 4px black; }
+
 .head_logo
 {
     width: 25%;
     padding: 3%;
-    margin-left: 30%;
+    margin-left: 10%;
 }
 
 .head_profil
@@ -27,11 +31,11 @@ header
     display: flex;
     align-items: center;
     padding: 1%;
+    justify-content: flex-end;
 }
 
 .head_profil .NP
 {
-    margin-right: 5%;
     text-align: right;
     padding: 2%;
     text-shadow: 2px 2px 4px black;
@@ -42,8 +46,9 @@ header
     font-size: larger;
     text-decoration: none;
     color: white;
-    margin-left: 5%;
-    width: 100%;    
+    margin-left: 3%;
+    width: 10%;
+    
 }
 
 /*===================================================================== FOOTER */
