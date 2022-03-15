@@ -31,6 +31,6 @@
         </section>
     </main>
     <img id="imgF" class="foot" src="StudentF.png" alt="etudiante" />
-    <a><input id="Legacymentions" value="Legacy mentions" type="button" class="bouton-Y Center foot" /></a>
+    <a href=""><input id="Legacymentions" value="Legacy mentions" type="button" class="bouton-Y Center foot" /></a>
     <img id="imgH" class="foot" src="StudentH.png" alt="etudiant" />
 </body>
