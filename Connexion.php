@@ -20,7 +20,7 @@
                         <option value="Etudiant ">Student</option>
                         <option value="Pilote ">Pilot</option>
                         <option value="Délégué ">Admin</option>
-                    </select>
+            p        </select>
                 </div>
 
                 <input class="nptconnex ombre writer " id="mail " value="" type="email " placeholder="mail "><br><br>
@@ -31,6 +31,6 @@
         </section>
     </main>
     <img id="imgF" class="foot" src="StudentF.png" alt="etudiante" />
-    <a href=""><input id="Legacymentions" value="Legacy mentions" type="button" class="bouton-Y Center foot" /></a>
+    <a href=""><input id="Legacymentions" value="Legacy mentions" type="button" class="bouton-Y Center foot pointer" /></a>
     <img id="imgH" class="foot" src="StudentH.png" alt="etudiant" />
 </body>
