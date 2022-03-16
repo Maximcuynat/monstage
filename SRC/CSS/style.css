@@ -88,16 +88,24 @@ footer
 }
 
 /*===================================================================== RIGHT Deleguate*/
+#btn_validate
+{
+    background-color: rgba(140, 104, 150, 1);
+    color: white;
+    margin-left: 45%;
+    margin-bottom: 2%;
+    font-size: large;
+}
+
 .Deleguate_Cadre
 {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 5%;
-    margin-top: 3%;
+    padding: 3%;
     margin-left: 2%;
     margin-right: 2%;
-    margin-bottom: 5%;
 }
 
 .Deleguate_form
@@ -106,19 +114,12 @@ footer
     background: linear-gradient(0deg, rgba(227, 154, 154, 0.2), rgba(227, 154, 154, 0.2)), #FFF1F1;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
+    margin-bottom: 3%;
     padding: 1%;
-    margin-top: 5%;
+    width: 25%;
 }
+
+
 
 .Deleguate_LBL
 { font-size: large; }
-
-.Rights_Min
-{
-    flex-grow: 0.25;
-}
-
-.Rights_Max
-{
-    flex-grow: 0.5;
-}
