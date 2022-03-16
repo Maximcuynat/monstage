@@ -1,0 +1,187 @@
+CREATE TABLE File(
+        File Varchar (100) NOT NULL
+	,CONSTRAINT File_PK PRIMARY KEY (File)
+)ENGINE=InnoDB;
+
+
+CREATE TABLE Class(
+        Class Varchar (20) NOT NULL
+	,CONSTRAINT Class_PK PRIMARY KEY (Class)
+)ENGINE=InnoDB;
+
+
+CREATE TABLE Role(
+        ID_Role Int  Auto_increment  NOT NULL ,
+        Role    Varchar (20) NOT NULL
+	,CONSTRAINT Role_PK PRIMARY KEY (ID_Role)
+)ENGINE=InnoDB;
+
+
+CREATE TABLE Permission(
+        ID_Perm    Int  Auto_increment  NOT NULL ,
+        Permission Varchar (50) NOT NULL
+	,CONSTRAINT Permission_PK PRIMARY KEY (ID_Perm)
+)ENGINE=InnoDB;
+
+CREATE TABLE Address(
+        ID_Ad Int  Auto_increment  NOT NULL ,
+        City  Varchar (50) NOT NULL
+	,CONSTRAINT Address_PK PRIMARY KEY (ID_Ad)
+)ENGINE=InnoDB;
+
+
+CREATE TABLE Person(
+        ID_Person Int  Auto_increment  NOT NULL ,
+        Mail      Varchar (50) NOT NULL ,
+        Pwd       Varchar (50) NOT NULL ,
+        Fname     Varchar (50) NOT NULL ,
+        Lname     Varchar (50) NOT NULL ,
+        ID_Ad     Int NOT NULL
+	,CONSTRAINT Person_PK PRIMARY KEY (ID_Person)
+
+	,CONSTRAINT Person_Address_FK FOREIGN KEY (ID_Ad) REFERENCES Address(ID_Ad) ON DELETE RESTRICT ON UPDATE CASCADE
+)ENGINE=InnoDB;
+
+
+CREATE TABLE Company(
+        ID_Cmp        Int  Auto_increment  NOT NULL ,
+        Name          Varchar (50) NOT NULL ,
+        Domain        Varchar (50) NOT NULL ,
+        Number_intern Int NOT NULL
+	,CONSTRAINT Company_PK PRIMARY KEY (ID_Cmp)
+)ENGINE=InnoDB;
+
+
+CREATE TABLE Offer(
+        ID_Offer Int  Auto_increment  NOT NULL ,
+        Post     Varchar (50) NOT NULL ,
+        Skill    Varchar (100) NOT NULL ,
+        Duration Int NOT NULL ,
+        Date     Date NOT NULL ,
+        Remu     Float NOT NULL ,
+        NB_Place Int NOT NULL ,
+        ID_Cmp   Int NOT NULL
+	,CONSTRAINT Offer_PK PRIMARY KEY (ID_Offer)
+
+	,CONSTRAINT Offer_Company_FK FOREIGN KEY (ID_Cmp) REFERENCES Company(ID_Cmp) ON DELETE RESTRICT ON UPDATE CASCADE
+)ENGINE=InnoDB;
+
+CREATE TABLE Opinion(
+        Com Varchar (200) NOT NULL
+	,CONSTRAINT Opinion_PK PRIMARY KEY (Com)
+)ENGINE=InnoDB;
+
+
+CREATE TABLE Mark(
+        Value Int NOT NULL
+	,CONSTRAINT Mark_PK PRIMARY KEY (Value)
+)ENGINE=InnoDB;
+
+
+CREATE TABLE Pers_File(
+        ID_Person Int NOT NULL ,
+        File      Varchar (100) NOT NULL
+	,CONSTRAINT Pers_File_PK PRIMARY KEY (ID_Person,File)
+
+	,CONSTRAINT Pers_File_Person_FK FOREIGN KEY (ID_Person) REFERENCES Person(ID_Person) ON DELETE RESTRICT ON UPDATE CASCADE
+	,CONSTRAINT Pers_File_File0_FK FOREIGN KEY (File) REFERENCES File(File) ON DELETE RESTRICT ON UPDATE CASCADE
+)ENGINE=InnoDB;
+
+
+CREATE TABLE Pers_Class(
+        Class     Varchar (20) NOT NULL ,
+        ID_Person Int NOT NULL
+	,CONSTRAINT Pers_Class_PK PRIMARY KEY (Class,ID_Person)
+
+	,CONSTRAINT Pers_Class_Class_FK FOREIGN KEY (Class) REFERENCES Class(Class) ON DELETE RESTRICT ON UPDATE CASCADE
+	,CONSTRAINT Pers_Class_Person0_FK FOREIGN KEY (ID_Person) REFERENCES Person(ID_Person) ON DELETE RESTRICT ON UPDATE CASCADE
+)ENGINE=InnoDB;
+
+
+CREATE TABLE Pers_Role(
+        ID_Role   Int NOT NULL ,
+        ID_Person Int NOT NULL
+	,CONSTRAINT Pers_Role_PK PRIMARY KEY (ID_Role,ID_Person)
+
+	,CONSTRAINT Pers_Role_Role_FK FOREIGN KEY (ID_Role) REFERENCES Role(ID_Role) ON DELETE RESTRICT ON UPDATE CASCADE
+	,CONSTRAINT Pers_Role_Person0_FK FOREIGN KEY (ID_Person) REFERENCES Person(ID_Person) ON DELETE RESTRICT ON UPDATE CASCADE
+)ENGINE=InnoDB;
+
+
+CREATE TABLE Offer_Class(
+        ID_Offer Int NOT NULL ,
+        Class    Varchar (20) NOT NULL
+	,CONSTRAINT Offer_Class_PK PRIMARY KEY (ID_Offer,Class)
+
+	,CONSTRAINT Offer_Class_Offer_FK FOREIGN KEY (ID_Offer) REFERENCES Offer(ID_Offer) ON DELETE RESTRICT ON UPDATE CASCADE
+	,CONSTRAINT Offer_Class_Class0_FK FOREIGN KEY (Class) REFERENCES Class(Class) ON DELETE RESTRICT ON UPDATE CASCADE
+)ENGINE=InnoDB;
+
+
+CREATE TABLE Favoris(
+        ID_Offer  Int NOT NULL ,
+        ID_Person Int NOT NULL
+	,CONSTRAINT Favoris_PK PRIMARY KEY (ID_Offer,ID_Person)
+
+	,CONSTRAINT Favoris_Offer_FK FOREIGN KEY (ID_Offer) REFERENCES Offer(ID_Offer) ON DELETE RESTRICT ON UPDATE CASCADE
+	,CONSTRAINT Favoris_Person0_FK FOREIGN KEY (ID_Person) REFERENCES Person(ID_Person) ON DELETE RESTRICT ON UPDATE CASCADE
+)ENGINE=InnoDB;
+
+CREATE TABLE Postuler(
+        ID_Person Int NOT NULL ,
+        ID_Offer  Int NOT NULL
+	,CONSTRAINT Postuler_PK PRIMARY KEY (ID_Person,ID_Offer)
+
+	,CONSTRAINT Postuler_Person_FK FOREIGN KEY (ID_Person) REFERENCES Person(ID_Person) ON DELETE RESTRICT ON UPDATE CASCADE
+	,CONSTRAINT Postuler_Offer0_FK FOREIGN KEY (ID_Offer) REFERENCES Offer(ID_Offer) ON DELETE RESTRICT ON UPDATE CASCADE
+)ENGINE=InnoDB;
+
+
+CREATE TABLE Perm_Role(
+        ID_Perm Int NOT NULL ,
+        ID_Role Int NOT NULL
+	,CONSTRAINT Perm_Role_PK PRIMARY KEY (ID_Perm,ID_Role)
+
+	,CONSTRAINT Perm_Role_Permission_FK FOREIGN KEY (ID_Perm) REFERENCES Permission(ID_Perm) ON DELETE RESTRICT ON UPDATE CASCADE
+	,CONSTRAINT Perm_Role_Role0_FK FOREIGN KEY (ID_Role) REFERENCES Role(ID_Role) ON DELETE RESTRICT ON UPDATE CASCADE
+)ENGINE=InnoDB;
+
+
+CREATE TABLE Offer_Ad(
+        ID_Offer Int NOT NULL ,
+        ID_Ad    Int NOT NULL
+	,CONSTRAINT Offer_Ad_PK PRIMARY KEY (ID_Offer,ID_Ad)
+
+	,CONSTRAINT Offer_Ad_Offer_FK FOREIGN KEY (ID_Offer) REFERENCES Offer(ID_Offer) ON DELETE RESTRICT ON UPDATE CASCADE
+	,CONSTRAINT Offer_Ad_Address0_FK FOREIGN KEY (ID_Ad) REFERENCES Address(ID_Ad) ON DELETE RESTRICT ON UPDATE CASCADE
+)ENGINE=InnoDB;
+
+
+CREATE TABLE Cmp_Ad(
+        ID_Cmp Int NOT NULL ,
+        ID_Ad  Int NOT NULL
+	,CONSTRAINT Cmp_Ad_PK PRIMARY KEY (ID_Cmp,ID_Ad)
+
+	,CONSTRAINT Cmp_Ad_Company_FK FOREIGN KEY (ID_Cmp) REFERENCES Company(ID_Cmp) ON DELETE RESTRICT ON UPDATE CASCADE
+	,CONSTRAINT Cmp_Ad_Address0_FK FOREIGN KEY (ID_Ad) REFERENCES Address(ID_Ad) ON DELETE RESTRICT ON UPDATE CASCADE
+)ENGINE=InnoDB;
+
+
+CREATE TABLE Mark_Cmp(
+        Value  Int NOT NULL ,
+        ID_Cmp Int NOT NULL
+	,CONSTRAINT Mark_Cmp_PK PRIMARY KEY (Value,ID_Cmp)
+
+	,CONSTRAINT Mark_Cmp_Mark_FK FOREIGN KEY (Value) REFERENCES Mark(Value) ON DELETE RESTRICT ON UPDATE CASCADE
+	,CONSTRAINT Mark_Cmp_Company0_FK FOREIGN KEY (ID_Cmp) REFERENCES Company(ID_Cmp) ON DELETE RESTRICT ON UPDATE CASCADE
+)ENGINE=InnoDB;
+
+CREATE TABLE Opi_Cmp(
+        ID_Cmp Int NOT NULL ,
+        Com    Varchar (200) NOT NULL
+	,CONSTRAINT Opi_Cmp_PK PRIMARY KEY (ID_Cmp,Com)
+
+	,CONSTRAINT Opi_Cmp_Company_FK FOREIGN KEY (ID_Cmp) REFERENCES Company(ID_Cmp) ON DELETE RESTRICT ON UPDATE CASCADE
+	,CONSTRAINT Opi_Cmp_Opinion0_FK FOREIGN KEY (Com) REFERENCES Opinion(Com) ON DELETE RESTRICT ON UPDATE CASCADE
+)ENGINE=InnoDB;
+
