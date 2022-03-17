@@ -20,6 +20,9 @@ abstract class Manager
             $this->setBdd();
         return self::$_bdd;
     }
+
+    // récupéré toutes les donnée d'une table
+    /*
     protected function getAll($table, $obj)
     {
         $var = [];
@@ -32,6 +35,8 @@ abstract class Manager
         return $var;
         $req->closeCursor();
     }
+
+    // Récupéré les valeurs d'une table avec le nom des valeurs des colonnes
     protected function getColumnValue($table, $obj, $column, $value)
     {
         $var = [];
@@ -44,6 +49,8 @@ abstract class Manager
         return $var;
         $req->closeCursor();
     }
+
+    // Ajouter une valeur
     protected function addValueTable($table, $values)
     {
         $rqt1 = '(';
@@ -99,4 +106,5 @@ abstract class Manager
             echo "Connection failed: " . $e->getMessage();
         }
     }
+    */
 }
