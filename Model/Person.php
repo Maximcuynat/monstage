@@ -21,4 +21,52 @@ class Person extends Manager
         $query = $this->getBdd()->prepare($rqt);
         $query->execute(array($mail, $pwd, $fname, $lname, $id_ad));
     }
+
+
+    //==================================================
+    // SET
+    function setId_pers($x)
+    {
+        if ($x < 0)
+        {$this->id_pers = 1;}
+        else {$this->id_pers = $x;}
+    }
+    function setMail($x)
+    {
+        if ($x == "")
+        {$this->mail = "none";}
+        else {$this->mail = $x;}
+    }
+    function setPwd($x)
+    {
+        if ($x == "")
+        {$this->pwd = "none";}
+        else {$this->pwd = $x;}
+    }
+    function setFname($x)
+    {
+        if ($x == "")
+        {$this->fname = "none";}
+        else {$this->fname = $x;}
+    }
+    function setLname($x)
+    {
+        if ($x == "")
+        {$this->lname = "none";}
+        else {$this->lname = $x;}
+    }
+    function setId_ad($x)
+    {
+        if ($x < 0)
+        {$this->id_ad = 1;}
+        else {$this->id_ad = $x;}
+    }
+
+    // GET
+    function getId_pers() { return $this->id_pers; }
+    function getMail() { return $this->mail; }
+    function getPwd() { return $this->pwd; }
+    function getFname() { return $this->fname; }
+    function getLname() { return $this->lname; }
+    function getId_ad() { return $this->id_ad; }
 }

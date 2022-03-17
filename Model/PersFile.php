@@ -1,0 +1,26 @@
+<?php
+class PersFile extends Manager
+{
+    private $file;
+    private $id_pers;
+
+    // SET
+    function setId_pers($x)
+    {
+        if ($x < 0)
+        {$this->id_pers = 1;}
+        else {$this->id_pers = $x;}
+    }
+    function setFile($f)
+    {
+        $this->file = $f;
+    }
+
+    // GET
+    function getId_pers()
+    { return $this->id_pers; }
+    function getFile()
+    {return $this->file;}
+}
+
+?>
