@@ -10,12 +10,23 @@ class Person extends Manager
     private $lname;
     private $id_ad;
 
-    function selectPilot()
+    function selectByRole($role)
     {
-        $rqt = "SELECT Fname, Lname, City, Class FROM Address NATURAL JOIN Person NATURAL JOIN Pers_Class NATURAL JOIN Class;";
+        $rqt1 = "SELECT ID_Pers FROM Person NATURAL JOIN Pers_Role NATURAL JOIN projet_web.Role WHERE Role = '".$role."';";
+        if (!$result = $this->getBdd()->query($rqt1)) 
+        { echo "erreur de requête : $rqt1\n"; die; }
+        $tab_id = [];
+        foreach ($result as $i=>$ligne)
+        {
+            array_push($tab_id, $ligne['ID_Pers']);
+        }
+        $result->closeCursor();
+
+
+        $rqt = "SELECT Fname, Lname, City, Class FROM Address NATURAL JOIN Person NATURAL JOIN Pers_Class NATURAL JOIN Class WHERE ID_Pers = ?;";
     }
 
-    function createPilot($mail, $pwd, $fname, $lname, $id_ad)
+    function createPerson($mail, $pwd, $fname, $lname, $id_ad)
     {
         $rqt = "INSERT INTO Person (Mail, Pwd, Fname, Lname, ID_Ad) VALUES (?, ?, ?, ?, ?);";
         $query = $this->getBdd()->prepare($rqt);
