@@ -22,6 +22,7 @@ abstract class Manager
     }
 
     // récupéré toutes les donnée d'une table
+    /*
     protected function getAll($table, $obj)
     {
         $var = [];
@@ -105,4 +106,5 @@ abstract class Manager
             echo "Connection failed: " . $e->getMessage();
         }
     }
+    */
 }
