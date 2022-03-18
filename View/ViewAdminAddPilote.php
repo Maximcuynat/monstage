@@ -5,7 +5,7 @@
 	?>
 	<body>
 		<form action="ViewAdminAddPiloteMessage.php" method="POST">
-			<div class="Deleguate_form">
+			<div class="Cadre_form">
 				<input type="text" name="Fname" placeholder="First name"><br>
 				<input type="text" name="Lname" placeholder="Last name"><br>
 				<input type="mail" name="mail" placeholder="E mail"><br>

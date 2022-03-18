@@ -2,6 +2,7 @@ body
 {
     background-color: whitesmoke;
     font-family: Verdana;
+    margin: 0;
 }
 
 
@@ -88,7 +89,7 @@ footer
 }
 
 /*===================================================================== RIGHT Deleguate*/
-#btn_validate
+.btn_validate
 {
     background-color: rgba(140, 104, 150, 1);
     color: white;
@@ -108,7 +109,7 @@ footer
     margin-right: 2%;
 }
 
-.Deleguate_form
+.Cadre_form
 {
     background-color: #FFF1F1;
     background: linear-gradient(0deg, rgba(227, 154, 154, 0.2), rgba(227, 154, 154, 0.2)), #FFF1F1;
@@ -116,10 +117,38 @@ footer
     border-radius: 10px;
     margin: 2%;
     padding: 1%;
-    width: 25%;
+    width: 20rem;;
 }
-
-
 
 .Deleguate_LBL
 { font-size: large; }
+
+/*===================================================*/
+.div_left_right
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.barre
+{
+    background: rgba(140, 104, 150, 1);
+}
+
+.sec
+{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.petit_cadre
+{
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content:end;
+}
+
+.gros_cadre
+{width: 30%;}

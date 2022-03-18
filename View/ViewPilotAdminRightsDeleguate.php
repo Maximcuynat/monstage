@@ -3,9 +3,9 @@ require "header.php";
 ?>
 <div id="Deleguate">
     <form action="SRC/PHP/Rights.php" method="POST">
-        <div class="Deleguate_Cadre">
+        <div class="Cadre_form">
             <!--=============================COMPANIES -->
-            <div class="Deleguate_form">
+            <div class="Cadre_form">
                 <h2>Companies Management</h2>
                 <input type="checkbox" name="R_Company">
                 <label class="Deleguate_LBL">Search a company</label><br>
@@ -21,7 +21,7 @@ require "header.php";
                 <label class="Deleguate_LBL">Assess a company</label><br>
             </div>
             <!--=============================OFFERS -->
-            <div class="Deleguate_form">
+            <div class="Cadre_form">
                 <h2>Offers Management</h2>
                 <input type="checkbox" name="R_Offer">
                 <label class="Deleguate_LBL">Search an offer</label><br>
@@ -35,7 +35,7 @@ require "header.php";
                 <label class="Deleguate_LBL">Consult offer statistics</label><br>
             </div>
             <!--============================= STUDENTS -->
-            <div class="Deleguate_form">
+            <div class="Cadre_form">
                 <h2>Students Management</h2>
                 <input type="checkbox" name="R_Student">
                 <label class="Deleguate_LBL">Search a student</label><br>
@@ -49,7 +49,7 @@ require "header.php";
                 <label class="Deleguate_LBL">Consult student statistics</label><br>
             </div>
             <!--============================= DELEGUATE -->
-            <div class="Deleguate_form">
+            <div class="Cadre_form">
                 <h2>Deleguates Management</h2>
                 <input type="checkbox" name="R_Deleguate">
                 <label class="Deleguate_LBL">Search a deleguate</label><br>
@@ -61,7 +61,7 @@ require "header.php";
                 <label class="Deleguate_LBL">Remove a deleguate</label><br>
             </div>
             <!--============================= Pilots -->
-            <div class="Deleguate_form">
+            <div class="Cadre_form">
                 <h2>Pilots Management</h2>
                 <input type="checkbox" name="R_Pilot">
                 <label class="Deleguate_LBL">Search a pilot</label><br>
@@ -73,7 +73,7 @@ require "header.php";
                 <label class="Deleguate_LBL">Remove a pilot</label><br>
             </div>
             <!--============================= Candidacy -->
-            <div class="Deleguate_form">
+            <div class="Cadre_form">
                 <h2>Candidacy Management</h2>
                 <input type="checkbox" name="Issued">
                 <label class="Deleguate_LBL">Notify that an internship validation sheet has been issued by the company</label><br>
@@ -81,7 +81,7 @@ require "header.php";
                 <label class="Deleguate_LBL">Notify the administrative assistant that an internship validation sheet has been signed by the pilot</label><br>
             </div>
         </div>
-        <input id="btn_validate" type="submit" name="submit" value="Validate">
+        <input class="btn_validate" type="submit" name="submit" value="Validate">
     </form>
 </div>
 
