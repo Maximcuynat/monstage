@@ -23,7 +23,8 @@
         </footer>
         
         <!--============================================================================================= JS -->
-        <script src="assets/js/jquery/jquery-3.6.0.min.js"></script>
         <script src="assets/js/script.js"></script>
+        <script type="text/javascript" src="../assets/js/jquery/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="../assets/js/Admin.js"></script>
   </body>
 </html>

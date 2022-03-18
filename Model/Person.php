@@ -21,8 +21,8 @@ class Person extends Manager
             array_push($tab_id, $ligne['ID_Pers']);
         }
         $result->closeCursor();
-
-
+        
+        
         $rqt = "SELECT Fname, Lname, City, Class FROM Address NATURAL JOIN Person NATURAL JOIN Pers_Class NATURAL JOIN Class WHERE ID_Pers = ?;";
     }
 
