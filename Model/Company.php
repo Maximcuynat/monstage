@@ -8,6 +8,15 @@ class Company extends Manager
     private $Domain;
     private $Number_intern;
 
+    function createCompany($id_cmp, $Name, $Domain, $Number_intern)
+    {
+        $values = ['id_cmp' => $id_cmp, 'Name' => $Name, 'Domain' => $Domain, 'Number_intern' => $Number_intern];
+        $this->addValueTable('Company', $values);
+    }
+
+
+
+
     // SET
     function setId_cmp($id)
     {

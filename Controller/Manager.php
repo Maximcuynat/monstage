@@ -97,9 +97,17 @@ abstract class Manager
         } 
     }
 
-    protected function deleteFromTable($table, $id, $idValue)
+    protected function deleteFromTable($table, $IdValues)
     {
-        $rqt = "DELETE FROM ".$table." WHERE ".$id." = ".$idValue;
+        $rqt = "DELETE FROM ".$table." WHERE ";
+        $rqt1 = "";
+        foreach($IdValues as $key => $val)
+        {
+            $rqt1 = $rqt1.$key." = ".$val." AND ";
+        }
+        $rqt = $rqt.$rqt1.";";
+        $rqt=str_replace('AND ;', ';', $rqt);
+
         try
         {
             $req = self::$_bdd->prepare($rqt);

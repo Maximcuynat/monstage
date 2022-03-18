@@ -148,7 +148,11 @@ footer
     display: flex;
     flex-direction: column;
     justify-content:end;
+    
 }
 
 .gros_cadre
-{width: 30%;}
+{
+    width: 30%;
+    height: 40%;
+}

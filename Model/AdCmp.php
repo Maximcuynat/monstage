@@ -9,8 +9,16 @@ class AdCmp extends Manager
     function createAdCmp($id_cmp, $id_ad)
     {
         $values = ['id_cmp' => $id_cmp, 'id_ad' => $id_ad];
-        $this->addValueTable('cmp_ad', $values);
+        return $this->addValueTable('cmp_ad', $values);
     }
+
+    function deleteAdCmp($id_cmp, $id_ad)
+    {
+        $this->getBdd();
+        $IdValues = ['$id_cmp' => $id_cmp, 'id_ad' => $id_ad];
+        return $this->deleteFromTable('cmp_ad', $IdValues);
+    }
+
 
 
 
