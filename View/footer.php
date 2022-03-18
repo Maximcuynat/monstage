@@ -11,19 +11,19 @@
 
             <div id="footer_div_logo">
                 <div>
-                    <a href="https://fr-fr.facebook.com/"><img src="SRC/IMG/logo_facebook.png" class="footer_logo"></img></a>
+                    <a href="https://fr-fr.facebook.com/"><img src="../assets/img/logo_facebook.png" class="footer_logo"></img></a>
                 </div>
                 <div>
-                    <a href="https://twitter.com/"><img src="SRC/IMG/logo_twitter.png" class="footer_logo"></img></a>
+                    <a href="https://twitter.com/"><img src="../assets/img/logo_twitter.png" class="footer_logo"></img></a>
                 </div>
                 <div>
-                    <a href="https://www.instagram.com/"><img src="SRC/IMG/logo_instagram.png" class="footer_logo"></img></a>
+                    <a href="https://www.instagram.com/"><img src="../assets/img/logo_instagram.png" class="footer_logo"></img></a>
                 </div>
             </div>
         </footer>
         
         <!--============================================================================================= JS -->
-        <script src="assets/jquery-3.6.0.min.js"></script>
-        <script src="assets/script.js"></script>
+        <script src="assets/js/jquery/jquery-3.6.0.min.js"></script>
+        <script src="assets/js/script.js"></script>
   </body>
 </html>
