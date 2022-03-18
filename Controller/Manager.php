@@ -22,7 +22,6 @@ abstract class Manager
     }
 
     // récupéré toutes les donnée d'une table
-    /*
     protected function getAll($table, $obj)
     {
         $var = [];
@@ -64,11 +63,18 @@ abstract class Manager
         $rqt1=str_replace(' ', ',', $rqt1); $rqt2=str_replace(' ', ',', $rqt2);
         $rqt1=str_replace(',)', ')', $rqt1); $rqt2=str_replace(',)', ')', $rqt2);
         $rqt = 'INSERT INTO '.$table.$rqt1.' VALUE '.$rqt2;
-        print_r($rqt);
-        $req = self::$_bdd->prepare($rqt);
-        $req->execute();
-        $req->closeCursor();
+        try
+        {
+            $req = self::$_bdd->prepare($rqt);
+            $req->execute();
+            $req->closeCursor();
+        }
+        catch(Exception $e)
+        {
+            echo "Failed: " . $e->getMessage();
+        } 
     }
+    
     protected function UpdTable($table, $values, $id, $idValue)
     {
         $rqt = "UPDATE ".$table." SET ";
@@ -106,5 +112,4 @@ abstract class Manager
             echo "Connection failed: " . $e->getMessage();
         }
     }
-    */
 }

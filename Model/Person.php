@@ -33,6 +33,11 @@ class Person extends Manager
         $query->execute(array($mail, $pwd, $fname, $lname, $id_ad));
     }
 
+    function createPersonV2($mail, $pwd, $fname, $lname, $id_ad)
+    {
+        $values = ['mail' => $mail, 'pwd' => $pwd, 'fname' => $fname, 'lname' => $lname, 'id_ad' => $id_ad];
+        $this->addValueTable('Person', $values);
+    }
 
     //==================================================
     // SET
