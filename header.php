@@ -21,3 +21,5 @@
             <img href="#" class="btn_menu" src="SRC/IMG/burger_menu_blanc.png">
           </div>
       </header>
+  </body>
+</html>
