@@ -6,6 +6,17 @@ class Postuler extends Manager
     private $id_Pers;
     private $id_Offer;
 
+    function createPostuler($id_pers, $id_Offer)
+    {
+        $values = ['id_pers' => $id_pers, 'id_Offer' => $id_Offer];
+        $this->addValueTable('Postuler', $values);
+    }
+
+
+
+
+
+
     // SET
     function setId_Pers($id)
     {

@@ -6,6 +6,16 @@ class PersClass extends Manager
     private $id_pers;
     private $class;
 
+    function createPersClass($id_pers, $class)
+    {
+        $values = ['id_pers' => $id_pers, 'class' => $class];
+        $this->addValueTable('Pers_Class', $values);
+    }
+
+
+
+
+
     // SET
     function setId_pers($x)
     {

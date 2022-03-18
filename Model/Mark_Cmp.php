@@ -1,11 +1,18 @@
 <?php
 require "../Controller/Manager.php";
 
-class Person extends Manager
+class Mark_Cmp extends Manager
 {
     private $id_cmp;
     private $value;
 
+    function createMarkCmp($id_cmp, $value)
+    {
+        $values = ['id_cmp' => $id_cmp, 'value' => $value];
+        $this->addValueTable('Mark_Cmp', $values);
+    }
+
+    // SET
     function setId_cmp($x)
     {
         if ($x < 0)
@@ -19,6 +26,7 @@ class Person extends Manager
         else {$this->value = $x;}
     }
 
+    // GET
     function getId_cmp()
     { return $this->id_cmp; }
     function getValue()

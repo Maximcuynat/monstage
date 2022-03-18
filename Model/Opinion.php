@@ -5,6 +5,12 @@ class Opinion extends Manager
 {
     private $com;
 
+    function createOpinion($com)
+    {
+        $values = ['com' => $com];
+        $this->addValueTable('opinion', $values);
+    }
+
     // SET
     function setCom($x)
     {

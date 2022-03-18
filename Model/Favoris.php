@@ -6,6 +6,15 @@ class Favoris extends Manager
     private $id_Pers;
     private $id_Offer;
 
+    function createCompany($id_Pers, $id_Offer)
+    {
+        $values = ['id_Pers' => $id_Pers, 'id_Offer' => $id_Offer];
+        $this->addValueTable('Favoris', $values);
+    }
+
+
+
+
     // SET
     function setId_Pers($id)
     {

@@ -4,6 +4,16 @@ class PersFile extends Manager
     private $file;
     private $id_pers;
 
+    function createPersFile($id_pers, $file)
+    {
+        $values = ['id_pers' => $id_pers, 'file' => $file];
+        $this->addValueTable('Pers_File', $values);
+    }
+
+
+
+
+
     // SET
     function setId_pers($x)
     {

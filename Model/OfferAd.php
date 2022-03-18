@@ -6,6 +6,16 @@ class Offer extends Manager
     private $id_offer;
     private $id_ad;
 
+    function createOffer($id_offer, $id_ad)
+    {
+        $values = ['id_offer' => $id_offer, 'id_ad' => $id_ad];
+        $this->addValueTable('Offer', $values);
+    }
+
+
+
+
+
     // SET
     function setId_offer($x)
     {

@@ -6,6 +6,23 @@ class AdCmp extends Manager
     private $id_cmp;
     private $id_ad;
 
+    function createAdCmp($id_cmp, $id_ad)
+    {
+        $values = ['id_cmp' => $id_cmp, 'id_ad' => $id_ad];
+        $this->addValueTable('cmp_ad', $values);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
     // SET
     function setId_cmp($id)
     {

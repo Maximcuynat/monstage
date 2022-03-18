@@ -6,6 +6,13 @@ class PersRole extends Manager
     private $id_pers;
     private $id_role;
 
+    function createPersRole($id_pers, $id_role)
+    {
+        $values = ['id_pers' => $id_pers, 'id_role' => $id_role];
+        $this->addValueTable('Pers_Role', $values);
+    }
+
+
     //==================================================
     // SET
     function setId_pers($x)
