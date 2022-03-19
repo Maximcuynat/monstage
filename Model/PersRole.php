@@ -8,6 +8,7 @@ class PersRole extends Manager
 
     function createPersRole($id_pers, $id_role)
     {
+        $this->getBdd();
         $values = ['id_pers' => $id_pers, 'id_role' => $id_role];
         $this->addValueTable('Pers_Role', $values);
     }

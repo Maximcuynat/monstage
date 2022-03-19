@@ -10,6 +10,7 @@ class Company extends Manager
 
     function createCompany($id_cmp, $Name, $Domain, $Number_intern)
     {
+        $this->getBdd();
         $values = ['id_cmp' => $id_cmp, 'Name' => $Name, 'Domain' => $Domain, 'Number_intern' => $Number_intern];
         $this->addValueTable('Company', $values);
     }

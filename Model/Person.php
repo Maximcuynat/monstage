@@ -35,6 +35,7 @@ class Person extends Manager
 
     function createPersonV2($mail, $pwd, $fname, $lname, $id_ad)
     {
+        $this->getBdd();
         $values = ['mail' => $mail, 'pwd' => $pwd, 'fname' => $fname, 'lname' => $lname, 'id_ad' => $id_ad];
         $this->addValueTable('Person', $values);
     }

@@ -8,6 +8,7 @@ class PermRole extends Manager
 
     function createPermRole($id_perm, $id_role)
     {
+        $this->getBdd();
         $values = ['id_perm' => $id_perm, 'id_role' => $id_role];
         $this->addValueTable('perm_role', $values);
     }

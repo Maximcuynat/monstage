@@ -7,6 +7,7 @@ class Opinion extends Manager
 
     function createOpinion($com)
     {
+        $this->getBdd();
         $values = ['com' => $com];
         $this->addValueTable('opinion', $values);
     }

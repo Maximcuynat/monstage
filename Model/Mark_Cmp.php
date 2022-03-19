@@ -8,6 +8,7 @@ class Mark_Cmp extends Manager
 
     function createMarkCmp($id_cmp, $value)
     {
+        $this->getBdd();
         $values = ['id_cmp' => $id_cmp, 'value' => $value];
         $this->addValueTable('Mark_Cmp', $values);
     }

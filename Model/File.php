@@ -5,6 +5,7 @@ class File extends Manager
 
     function createFile($file)
     {
+        $this->getBdd();
         $values = ['file' => $file];
         $this->addValueTable('File', $values);
     }

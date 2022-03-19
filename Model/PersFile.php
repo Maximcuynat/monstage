@@ -6,6 +6,7 @@ class PersFile extends Manager
 
     function createPersFile($id_pers, $file)
     {
+        $this->getBdd();
         $values = ['id_pers' => $id_pers, 'file' => $file];
         $this->addValueTable('Pers_File', $values);
     }

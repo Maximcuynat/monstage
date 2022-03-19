@@ -8,6 +8,7 @@ class Favoris extends Manager
 
     function createCompany($id_Pers, $id_Offer)
     {
+        $this->getBdd();
         $values = ['id_Pers' => $id_Pers, 'id_Offer' => $id_Offer];
         $this->addValueTable('Favoris', $values);
     }

@@ -15,6 +15,7 @@ class Offer extends Manager
 
     function createOffer($id_offer, $post, $skill, $duration, $date, $remu, $nb_place, $id_cmp)
     {
+        $this->getBdd();
         $values = ['id_offer' => $id_offer, 'post' => $post, 'skill' => $skill, 'duration' => $duration, 'date' => $date, 'remu' => $remu, 'nb_place' => $nb_place, 'id_cmp' => $id_cmp];
         $this->addValueTable('Offer', $values);
     }

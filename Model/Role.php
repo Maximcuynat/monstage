@@ -8,6 +8,7 @@ class Role extends Manager
 
     function createRole($id_role, $role)
     {
+        $this->getBdd();
         $values = ['id_role' => $id_role, 'role' => $role];
         $this->addValueTable('Role', $values);
     }

@@ -8,6 +8,7 @@ class Postuler extends Manager
 
     function createPostuler($id_pers, $id_Offer)
     {
+        $this->getBdd();
         $values = ['id_pers' => $id_pers, 'id_Offer' => $id_Offer];
         $this->addValueTable('Postuler', $values);
     }

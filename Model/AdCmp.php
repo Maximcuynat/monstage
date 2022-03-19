@@ -8,6 +8,7 @@ class AdCmp extends Manager
 
     function createAdCmp($id_cmp, $id_ad)
     {
+        $this->getBdd();
         $values = ['id_cmp' => $id_cmp, 'id_ad' => $id_ad];
         return $this->addValueTable('cmp_ad', $values);
     }
