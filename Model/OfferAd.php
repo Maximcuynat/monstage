@@ -1,16 +1,23 @@
 <?php
 require "../Controller/Manager.php";
 
-class Offer extends Manager
+class OfferAd extends Manager
 {
     private $id_offer;
     private $id_ad;
 
-    function createOffer($id_offer, $id_ad)
+    function createOfferAd($id_offer, $id_ad)
     {
         $this->getBdd();
         $values = ['id_offer' => $id_offer, 'id_ad' => $id_ad];
-        $this->addValueTable('Offer', $values);
+        $this->addValueTable('Offer_Ad', $values);
+    }
+
+    function deleteOfferAd($id_offer, $id_ad)
+    {
+        $this->getBdd();
+        $IdValues = ['$id_offer' => $id_offer, 'id_ad' => $id_ad];
+        return $this->deleteFromTable('offer_ad', $IdValues);
     }
 
 

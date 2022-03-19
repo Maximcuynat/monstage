@@ -11,6 +11,13 @@ class PersFile extends Manager
         $this->addValueTable('Pers_File', $values);
     }
 
+    function deletePersFile($file, $id_pers)
+    {
+        $this->getBdd();
+        $IdValues = ['$file' => $file, 'id_pers' => $id_pers];
+        return $this->deleteFromTable('Pers_File', $IdValues);
+    }
+
 
 
 

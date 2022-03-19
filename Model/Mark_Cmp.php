@@ -13,6 +13,16 @@ class Mark_Cmp extends Manager
         $this->addValueTable('Mark_Cmp', $values);
     }
 
+    function deleteMarkCmp($id_cmp, $value)
+    {
+        $this->getBdd();
+        $IdValues = ['$id_cmp' => $id_cmp, 'value' => $value];
+        return $this->deleteFromTable('mark_cmp', $IdValues);
+    }
+
+
+
+
     // SET
     function setId_cmp($x)
     {

@@ -13,6 +13,13 @@ class PermRole extends Manager
         $this->addValueTable('perm_role', $values);
     }
 
+    function deletePermRole($id_perm, $id_role)
+    {
+        $this->getBdd();
+        $IdValues = ['$id_perm' => $id_perm, 'id_role' => $id_role];
+        return $this->deleteFromTable('perm_role', $IdValues);
+    }
+
 
 
 

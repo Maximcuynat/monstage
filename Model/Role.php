@@ -6,13 +6,19 @@ class Role extends Manager
     private $id_role;
     private $role;
 
-    function createRole($id_role, $role)
+    function createRole($role)
     {
         $this->getBdd();
-        $values = ['id_role' => $id_role, 'role' => $role];
+        $values = ['role' => $role];
         $this->addValueTable('Role', $values);
     }
 
+    function deleteRole($id_role)
+    {
+        $this->getBdd();
+        $IdValues = ['$id_role' => $id_role];
+        return $this->deleteFromTable('Role', $IdValues);
+    }
 
 
 

@@ -12,6 +12,15 @@ class Opinion extends Manager
         $this->addValueTable('opinion', $values);
     }
 
+    function deleteOpinion($com)
+    {
+        $this->getBdd();
+        $IdValues = ['$com' => $com];
+        return $this->deleteFromTable('opinion', $IdValues);
+    }
+
+
+
     // SET
     function setCom($x)
     {
@@ -21,7 +30,6 @@ class Opinion extends Manager
     }
 
     // GET
-    function getCom()
-    { return $this->com; }
+    function getCom() { return $this->com; }
     
 }

@@ -10,14 +10,17 @@ class File extends Manager
         $this->addValueTable('File', $values);
     }
 
-    function setFile($f)
+    function deleteFile($file)
     {
-        $this->file = $f;
+        $this->getBdd();
+        $IdValues = ['$file' => $file];
+        return $this->deleteFromTable('File', $IdValues);
     }
-    function getFile()
-    {
-        return $this->file;
-    }
+
+    // SET
+    function setFile($f) { $this->file = $f; }
+    // GET
+    function getFile() { return $this->file; }
 }
 
 ?>

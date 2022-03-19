@@ -40,6 +40,16 @@ class Person extends Manager
         $this->addValueTable('Person', $values);
     }
 
+    function deletePerson($id_pers)
+    {
+        $this->getBdd();
+        $IdValues = ['$id_pers' => $id_pers];
+        return $this->deleteFromTable('Person', $IdValues);
+    }
+
+
+
+
     //==================================================
     // SET
     function setId_pers($x)

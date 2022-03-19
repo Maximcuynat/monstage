@@ -13,6 +13,16 @@ class PersRole extends Manager
         $this->addValueTable('Pers_Role', $values);
     }
 
+    function deletePersRole($id_pers, $id_role)
+    {
+        $this->getBdd();
+        $IdValues = ['$id_pers' => $id_pers, 'id_role' => $id_role];
+        return $this->deleteFromTable('Pers_Role', $IdValues);
+    }
+
+
+
+
 
     //==================================================
     // SET

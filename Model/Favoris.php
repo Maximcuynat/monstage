@@ -6,11 +6,18 @@ class Favoris extends Manager
     private $id_Pers;
     private $id_Offer;
 
-    function createCompany($id_Pers, $id_Offer)
+    function createFavoris($id_Pers, $id_Offer)
     {
         $this->getBdd();
         $values = ['id_Pers' => $id_Pers, 'id_Offer' => $id_Offer];
         $this->addValueTable('Favoris', $values);
+    }
+
+    function deleteFavoris($id_Pers, $id_Offer)
+    {
+        $this->getBdd();
+        $IdValues = ['$id_pers' => $id_Pers, 'id_offer' => $id_Offer];
+        return $this->deleteFromTable('Favoris', $IdValues);
     }
 
 

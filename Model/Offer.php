@@ -13,11 +13,18 @@ class Offer extends Manager
     private $id_cmp;
 
 
-    function createOffer($id_offer, $post, $skill, $duration, $date, $remu, $nb_place, $id_cmp)
+    function createOffer($post, $skill, $duration, $date, $remu, $nb_place, $id_cmp)
     {
         $this->getBdd();
-        $values = ['id_offer' => $id_offer, 'post' => $post, 'skill' => $skill, 'duration' => $duration, 'date' => $date, 'remu' => $remu, 'nb_place' => $nb_place, 'id_cmp' => $id_cmp];
+        $values = ['post' => $post, 'skill' => $skill, 'duration' => $duration, 'date' => $date, 'remu' => $remu, 'nb_place' => $nb_place, 'id_cmp' => $id_cmp];
         $this->addValueTable('Offer', $values);
+    }
+
+    function deleteCompany($id_offer)
+    {
+        $this->getBdd();
+        $IdValues = ['$id_offer' => $id_offer];
+        return $this->deleteFromTable('Offer', $IdValues);
     }
 
 
