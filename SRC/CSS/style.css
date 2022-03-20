@@ -51,6 +51,33 @@ header
     
 }
 
+
+.bar 
+{
+  top: .2rem;
+  right: .2rem;
+  z-index: 100;
+  width: 3rem; 
+  height: max-content; 
+}
+
+.bar:hover {
+    width: 4rem;
+}
+
+.burger {
+  width: 80%;
+  height: .3rem;
+  margin: 10% 1rem;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1rem #8C6896;
+  
+}
+
+
+
 /*===================================================================== FOOTER */
 footer
 {
