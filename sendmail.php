@@ -5,5 +5,5 @@ $from = "expéditeur";
 $to = "destinataire";
 $subject = "objet";
 $message = "contenu du mail";
-$headers = "From:" . $from;
+$headers = "From:" . $from;:// on peut le personnaliser pour envoyer une page html
 mail($to,$subject,$message, $headers);
