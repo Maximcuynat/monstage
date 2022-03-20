@@ -5,11 +5,12 @@ class OfferAd extends Manager
 {
     private $id_offer;
     private $id_ad;
+    private $city;
 
-    function createOfferAd($id_offer, $id_ad)
+    function createOfferAd()
     {
         $this->getBdd();
-        $values = ['id_offer' => $id_offer, 'id_ad' => $id_ad];
+        $values = ['id_offer' => $this->getId_offer(), 'id_ad' => $this->getId_ad()];
         $this->addValueTable('Offer_Ad', $values);
     }
 
@@ -17,7 +18,13 @@ class OfferAd extends Manager
     {
         $this->getBdd();
         $IdValues = ['$id_offer' => $id_offer, 'id_ad' => $id_ad];
-        return $this->deleteFromTable('offer_ad', $IdValues);
+        $this->deleteFromTable('offer_ad', $IdValues);
+    }
+
+    function selectIdAdd()
+    {
+        $this->getBdd();
+        return $this->selectById('Offer_Ad', 'OfferAd', "city", $this->getCity(), 'ID_Ad');
     }
 
 
@@ -37,11 +44,20 @@ class OfferAd extends Manager
         {$this->id_ad = 1;}
         else {$this->id_ad = $x;}
     }
+    function setCity($x)
+    {
+        if ($x == "")
+        {$this->city = "none";}
+        else {$this->city = $x;}
+    }
+
 
     // GET
     function getId_offer()
     { return $this->id_offer; }
     function getId_ad()
     { return $this->id_ad; }
+    function getCity()
+    { return $this->city; }
     
 }

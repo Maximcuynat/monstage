@@ -36,10 +36,10 @@ abstract class Manager
     }
 
     // Récupéré les valeurs d'une table avec le nom des valeurs des colonnes
-    protected function getColumnValue($table, $obj, $column, $value)
+    protected function selectById($table, $obj, $condition, $value, $column)
     {
         $var = [];
-        $req = self::$_bdd->prepare('SELECT * FROM '.$table.' WHERE '.$column.' like "'.$value.'%"');
+        $req = self::$_bdd->prepare('SELECT '.$column.' FROM '.$table.' WHERE '.$condition.' like '.$value.'');
         $req->execute();
         while($data = $req->fetch(PDO::FETCH_ASSOC))
         {
@@ -62,17 +62,19 @@ abstract class Manager
         $rqt1 = $rqt1.')'; $rqt2 = $rqt2.')';
         $rqt1=str_replace(' ', ',', $rqt1); $rqt2=str_replace(' ', ',', $rqt2);
         $rqt1=str_replace(',)', ')', $rqt1); $rqt2=str_replace(',)', ')', $rqt2);
-        $rqt = 'INSERT INTO '.$table.$rqt1.' VALUE '.$rqt2;
+        $rqt = 'INSERT INTO '.$table.$rqt1.' VALUE '.$rqt2."; SELECT @@IDENTITY";
         try
         {
             $req = self::$_bdd->prepare($rqt);
             $req->execute();
+            $data = $req->fetch(PDO::FETCH_ASSOC);
+            return $data;
             $req->closeCursor();
         }
         catch(Exception $e)
         {
             echo "Failed: " . $e->getMessage();
-        } 
+        }
     }
     
     protected function UpdTable($table, $values, $id, $idValue)

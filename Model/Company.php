@@ -8,17 +8,23 @@ class Company extends Manager
     private $Domain;
     private $Number_intern;
 
-    function createCompany($Name, $Domain, $Number_intern)
+    function selectIdCmp($company)
     {
         $this->getBdd();
-        $values = ['Name' => "'".$Name."'", 'Domain' => "'".$Domain."'", 'Number_intern' => $Number_intern];
+        return $this->selectById('Company', 'Company', 'Name', $company, 'ID_Cmp');
+    }
+
+    function createCompany()
+    {
+        $this->getBdd();
+        $values = ['Name' => "'".$this->getName()."'", 'Domain' => "'".$this->getDomain()."'", 'Number_intern' => $this->getNumber_intern()];
         $this->addValueTable('Company', $values);
     }
 
-    function deleteCompany($id_cmp)
+    function deleteCompany()
     {
         $this->getBdd();
-        $IdValues = ['$id_cmp' => $id_cmp];
+        $IdValues = ['$id_cmp' => $this->getId_cmp()];
         return $this->deleteFromTable('Company', $IdValues);
     }
 
