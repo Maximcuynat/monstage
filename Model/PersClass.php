@@ -9,14 +9,14 @@ class PersClass extends Manager
     function createPersClass($id_pers, $class)
     {
         $this->getBdd();
-        $values = ['id_pers' => $id_pers, 'class' => $class];
+        $values = ['id_pers' => $id_pers, 'class' => "'".$class."'"];
         $this->addValueTable('Pers_Class', $values);
     }
 
     function deletePersClass($id_pers, $class)
     {
         $this->getBdd();
-        $IdValues = ['$id_pers' => $id_pers, 'class' => $class];
+        $IdValues = ['$id_pers' => $id_pers, 'class' => "'".$class."'"];
         return $this->deleteFromTable('Pers_Class', $IdValues);
     }
 

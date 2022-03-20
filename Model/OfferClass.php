@@ -9,14 +9,14 @@ class OfferClass extends Manager
     function createOfferClass($id_offer, $class)
     {
         $this->getBdd();
-        $values = ['id_offer' => $id_offer, 'class' => $class];
+        $values = ['id_offer' => $id_offer, 'class' => "'".$class."'"];
         $this->addValueTable('offer_class', $values);
     }
 
     function deleteOfferClass($id_offer, $class)
     {
         $this->getBdd();
-        $IdValues = ['$id_offer' => $id_offer, 'class' => $class];
+        $IdValues = ['$id_offer' => $id_offer, 'class' => "'".$class."'"];
         return $this->deleteFromTable('offer_class', $IdValues);
     }
 

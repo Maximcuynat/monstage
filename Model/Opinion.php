@@ -8,14 +8,14 @@ class Opinion extends Manager
     function createOpinion($com)
     {
         $this->getBdd();
-        $values = ['com' => $com];
+        $values = ['com' => "'".$com."'"];
         $this->addValueTable('opinion', $values);
     }
 
     function deleteOpinion($com)
     {
         $this->getBdd();
-        $IdValues = ['$com' => $com];
+        $IdValues = ['$com' => "'".$com."'"];
         return $this->deleteFromTable('opinion', $IdValues);
     }
 

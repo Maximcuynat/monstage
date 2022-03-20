@@ -9,7 +9,7 @@ class Role extends Manager
     function createRole($role)
     {
         $this->getBdd();
-        $values = ['role' => $role];
+        $values = ['role' => "'".$role."'"];
         $this->addValueTable('Role', $values);
     }
 

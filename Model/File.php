@@ -6,14 +6,14 @@ class File extends Manager
     function createFile($file)
     {
         $this->getBdd();
-        $values = ['file' => $file];
+        $values = ['file' => "'".$file."'"];
         $this->addValueTable('File', $values);
     }
 
     function deleteFile($file)
     {
         $this->getBdd();
-        $IdValues = ['$file' => $file];
+        $IdValues = ['$file' => "'".$file."'"];
         return $this->deleteFromTable('File', $IdValues);
     }
 
