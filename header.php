@@ -18,7 +18,11 @@
           <div class="head_profil">
             <h2 class="NP">&nbsp;Prenom NOM&nbsp;</h2>
             <img src="SRC/IMG/user.png">
-            <img href="#" class="btn_menu" src="SRC/IMG/burger_menu_blanc.png">
+            <div class="bar menuIcon">
+              <div class="burger menuIcon"></div>
+              <div class="burger menuIcon"></div>
+              <div class="burger menuIcon"></div>
+            </div>
           </div>
       </header>
   </body>
