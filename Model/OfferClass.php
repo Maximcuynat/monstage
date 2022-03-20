@@ -6,10 +6,10 @@ class OfferClass extends Manager
     private $id_offer;
     private $class;
 
-    function createOfferClass($id_offer, $class)
+    function createOfferClass()
     {
         $this->getBdd();
-        $values = ['id_offer' => $id_offer, 'class' => "'".$class."'"];
+        $values = ['id_offer' => $this->getId_offer(), 'class' => "'".$this->getClass()."'"];
         $this->addValueTable('offer_class', $values);
     }
 

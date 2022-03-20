@@ -2,14 +2,16 @@
 require '../Model/Offer.php';
 require '../Model/OfferAd.php';
 require '../Model/Company.php';
+require '../Model/OfferClass.php';
 
 class ManagerOffer
 {
     private Offer $off;
     private OfferAd $off_ad;
     private Company $cmp;
+    private OfferClass $off_class;
 
-    public function addOffer($post, $skill, $duration, $remu, $nb_place, $company, $tb_ad)
+    public function addOffer($post, $skill, $duration, $remu, $nb_place, $company, $tb_ad, $tb_class)
     {
         // TB Offer
         $off = new Offer();
@@ -29,22 +31,24 @@ class ManagerOffer
 
         // TB Offer_Ad
         $off_ad = new OfferAd();
+        $off_ad->setId_offer($id_offer);
         foreach ($tb_ad as $city)
         {
             $off_ad->setCity($city);
             $id_ad = $off_ad->selectIdAdd();
             $off_ad->setId_ad($id_ad);
-            $off_ad->setId_offer($id_offer);
             $off_ad->createOfferAd();
         }
-    }
 
-    /*
-    Data : [compétences – localité(s) – entreprise – durée du stage 
-    – base de rémunération – date de l'offre 
-    - nombre de places offertes aux étudiants].
-    
-    */
+        // TB Offer_Class
+        $off_class = new OfferClass();
+        $off_class->setId_offer($id_offer);
+        foreach ($tb_class as $class)
+        {
+            $off_class->setClass($class);
+            $off_class->createOfferClass();
+        }
+    }
 }
 
 ?>
