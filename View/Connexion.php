@@ -8,8 +8,9 @@
     if(isset($valider))
     {
         // Faire la demande de connexion à la base de donnée
-        require '../Model/Person.php';
-        $authentification = new Person();
+        require '../Controller/ManagerConnexion.php';
+        $authentification = new ManagerConnexion();
+        $userData = $authentification->checkIfExist($login, $pass);
         
         if( $login == "Maxim" && $pass == "Cuynat" ) // === Verifications de l'identité de la personne
         {   
