@@ -33,7 +33,7 @@ POUR LES COMMENTAIRES
 
 POUR LES CONDITIONS
 Syntaxe : 
-if ()
+if () \n
 {
   // Code
 }
