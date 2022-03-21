@@ -3,8 +3,8 @@
 Syntaxe à respecter:
 
 LANGUE
-- ANGLAIS pour :
-- FRANCAIS pour :
+- ANGLAIS pour : tout les fichiers (commentaires possibles)
+- FRANCAIS pour : les commentaires
 
 POUR CREER UN FICHIER
 - Pour créer une vue: ActionObjet.php exemples: CreateStudent.php, SearchCompany.php
@@ -12,7 +12,7 @@ POUR CREER UN FICHIER
 - Pour créer un model: NomTable exemples: File.php, AdCmp.php
 
 POUR CREER UNE VARIABLE / FICHIER
-- varaiable en ANGLAIS ou FRANCAIS (à choisir)
+- varaiable en ANGLAIS
 - Première lettre en minuscule
 - pas de "_"
 - A chaque mot une majuscule (sauf premier mot)
@@ -29,4 +29,4 @@ POUR LE FICHIER IMG DANS ASSET
 
 POUR LES COMMENTAIRES
 - Mettre un maximum de commentaires
-- -commentaires en ANGLAIS ou FRANCAIS (à choisir)
+- -commentaires en ANGLAIS ou FRANCAIS
