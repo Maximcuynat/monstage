@@ -13,7 +13,5 @@ class ManagerConnexion extends Manager
         // SELECT ID_Person FROM person WHERE Mail="lea.laborde@viacesi.fr" AND Pwd="cesi123";
         return $this->selectIdConnexion($mail, $password);
     }
-    
-    
 }
 ?>

@@ -69,7 +69,7 @@ abstract class Manager
     }
 
     // Ajouter une valeur
-    protected function addValueTable($table, $values)
+    protected function addValueTable($table, $values) // ======================================================================
     {
         // INSERT INTO TB (column) VALUE (valeur)
         // Parathèses de la rqt pour les column et les valeurs
