@@ -20,10 +20,10 @@ class Offer extends Manager
         return $this->addValueTable('Offer', $values);
     }
 
-    function deleteCompany($id_offer)
+    function deleteCompany()
     {
         $this->getBdd();
-        $IdValues = ['$id_offer' => $id_offer];
+        $IdValues = ['$id_offer' => $this->getId_offer()];
         return $this->deleteFromTable('Offer', $IdValues);
     }
 

@@ -5,15 +5,17 @@ abstract class Manager
 
     private static function setBdd()
     {
-        try{
+        try
+        {
             self::$_bdd = new PDO('mysql:host=localhost;dbname=f1','root');
             self::$_bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
         }
-        catch(Exception $e){
+        catch(Exception $e)
+        {
             die("Connection failed: " . $e->getMessage());
-        }
-        
+        }   
     }
+
     protected function getBdd()
     {
         if(self::$_bdd == null)
@@ -56,19 +58,24 @@ abstract class Manager
         // Parathèses de la rqt pour les column et les valeurs
         $debut_rqt = '(';
         $fin_rqt = '(';
+
         // Ajout des colonnes et valeurs dans les parenthèses
         foreach($values as $key => $donnee)
         {
             $debut_rqt = $debut_rqt.$key.' ';
             $fin_rqt = $fin_rqt."'".$donnee."' ";
         }
+
         // Assemblement du tout pour avoir la rqt entière
         $debut_rqt = $debut_rqt.')'; $fin_rqt = $fin_rqt.')';
+
         // On enlève la dernière virgule dans chaque parenthèse
         $debut_rqt=str_replace(' ', ',', $debut_rqt); $fin_rqt=str_replace(' ', ',', $fin_rqt);
         $debut_rqt=str_replace(',)', ')', $debut_rqt); $fin_rqt=str_replace(',)', ')', $fin_rqt);
+
         // Assemblement final avec ajout de SELECT @@IDENTITY pour récupérer l'id
         $rqt = 'INSERT INTO '.$table.$debut_rqt.' VALUE '.$fin_rqt."; SELECT @@IDENTITY";
+
         // Execution de la rqt et renvoie des données
         try
         {
@@ -87,12 +94,12 @@ abstract class Manager
     protected function UpdTable($table, $values, $id, $idValue)
     {
         $rqt = "UPDATE ".$table." SET ";
-        $debut_rqt = "";
+        $suite_rqt = "";
         foreach($values as $key => $val)
         {
-            $debut_rqt = $debut_rqt.$key." = '".$val."', ";
+            $suite_rqt = $suite_rqt.$key." = '".$val."', ";
         }
-        $rqt = $rqt.$debut_rqt.'WHERE '.$id.'='.$idValue;
+        $rqt = $rqt.$suite_rqt.'WHERE '.$id.'='.$idValue;
         $rqt=str_replace(', W', ' W', $rqt);
         try
         {

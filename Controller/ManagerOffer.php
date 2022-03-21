@@ -49,6 +49,24 @@ class ManagerOffer
             $off_class->createOfferClass();
         }
     }
+
+    public function suppOffer($id_offer)
+    {
+        // TB Offer
+        $off = new Offer();
+        $off->setId_offer($id_offer);
+        $off->deleteOffer();
+
+        // TB Offer_Class
+        $off_class = new OfferClass();
+        $off_class->setId_offer($id_offer);
+        $off_class->deleteOfferClass();
+
+        // TB Offer_Ad
+        $off_ad = new OfferAd();
+        $off_ad->setId_offer($id_offer);
+        $off_ad->deleteOfferAd();
+    }
 }
 
 ?>
