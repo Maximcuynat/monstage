@@ -30,10 +30,3 @@ POUR LE FICHIER IMG DANS ASSET
 POUR LES COMMENTAIRES
 - Mettre un maximum de commentaires
 - -commentaires en ANGLAIS ou FRANCAIS (à choisir)
-
-POUR LES CONDITIONS
-Syntaxe : 
-if () \n
-{
-  // Code
-}
