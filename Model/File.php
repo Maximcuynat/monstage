@@ -3,14 +3,24 @@ class File extends Manager
 {
     private $file;
 
-    function setFile($f)
+    function createFile($file)
     {
-        $this->file = $f;
+        $this->getBdd();
+        $values = ['file' => "'".$file."'"];
+        $this->addValueTable('File', $values);
     }
-    function getFile()
+
+    function deleteFile($file)
     {
-        return $this->file;
+        $this->getBdd();
+        $IdValues = ['$file' => "'".$file."'"];
+        return $this->deleteFromTable('File', $IdValues);
     }
+
+    // SET
+    function setFile($f) { $this->file = $f; }
+    // GET
+    function getFile() { return $this->file; }
 }
 
 ?>

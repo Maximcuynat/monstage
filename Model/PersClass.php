@@ -6,6 +6,24 @@ class PersClass extends Manager
     private $id_pers;
     private $class;
 
+    function createPersClass($id_pers, $class)
+    {
+        $this->getBdd();
+        $values = ['id_pers' => $id_pers, 'class' => "'".$class."'"];
+        $this->addValueTable('Pers_Class', $values);
+    }
+
+    function deletePersClass($id_pers, $class)
+    {
+        $this->getBdd();
+        $IdValues = ['$id_pers' => $id_pers, 'class' => "'".$class."'"];
+        return $this->deleteFromTable('Pers_Class', $IdValues);
+    }
+
+
+
+
+
     // SET
     function setId_pers($x)
     {

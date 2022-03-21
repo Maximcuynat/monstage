@@ -6,6 +6,25 @@ class Postuler extends Manager
     private $id_Pers;
     private $id_Offer;
 
+    function createPostuler($id_pers, $id_Offer)
+    {
+        $this->getBdd();
+        $values = ['id_pers' => $id_pers, 'id_Offer' => $id_Offer];
+        $this->addValueTable('Postuler', $values);
+    }
+
+    function deletePostuler($id_pers, $id_Offer)
+    {
+        $this->getBdd();
+        $IdValues = ['$id_pers' => $id_pers, 'id_Offer' => $id_Offer];
+        return $this->deleteFromTable('Postuler', $IdValues);
+    }
+
+
+
+
+
+
     // SET
     function setId_Pers($id)
     {
