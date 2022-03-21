@@ -8,8 +8,8 @@
     if(isset($valider))
     {
         // Faire la demande de connexion à la base de donnée
-        require '../Model/Connexion.php';
-        $authentification = new Connexion();
+        require '../Model/Person.php';
+        $authentification = new Person();
         
         if( $login == "Maxim" && $pass == "Cuynat" ) // === Verifications de l'identité de la personne
         {   
