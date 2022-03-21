@@ -11,7 +11,7 @@ class Company extends Manager
     function selectIdCmp($company)
     {
         $this->getBdd();
-        return $this->selectById('Company', 'Company', 'Name', $company, 'ID_Cmp');
+        return $this->selectById('Company', 'Company', 'Name', $company, 'ID_Cmp'); // Table, Objet, condition, valeur, column
     }
 
     function createCompany()

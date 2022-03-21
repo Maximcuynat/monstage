@@ -39,7 +39,7 @@ abstract class Manager
     protected function selectById($table, $obj, $condition, $value, $column)
     {
         $var = [];
-        $req = self::$_bdd->prepare('SELECT '.$column.' FROM '.$table.' WHERE '.$condition.' like '.$value.'');
+        $req = self::$_bdd->prepare('SELECT '.$column.' FROM '.$table.' WHERE '.$condition.' like '.$value);
         $req->execute();
         while($data = $req->fetch(PDO::FETCH_ASSOC))
         {
@@ -52,17 +52,24 @@ abstract class Manager
     // Ajouter une valeur
     protected function addValueTable($table, $values)
     {
-        $rqt1 = '(';
-        $rqt2 = '(';
+        // INSERT INTO TB (column) VALUE (valeur)
+        // Parathèses de la rqt pour les column et les valeurs
+        $debut_rqt = '(';
+        $fin_rqt = '(';
+        // Ajout des colonnes et valeurs dans les parenthèses
         foreach($values as $key => $donnee)
         {
-            $rqt1 = $rqt1.$key.' ';
-            $rqt2 = $rqt2."'".$donnee."' ";
+            $debut_rqt = $debut_rqt.$key.' ';
+            $fin_rqt = $fin_rqt."'".$donnee."' ";
         }
-        $rqt1 = $rqt1.')'; $rqt2 = $rqt2.')';
-        $rqt1=str_replace(' ', ',', $rqt1); $rqt2=str_replace(' ', ',', $rqt2);
-        $rqt1=str_replace(',)', ')', $rqt1); $rqt2=str_replace(',)', ')', $rqt2);
-        $rqt = 'INSERT INTO '.$table.$rqt1.' VALUE '.$rqt2."; SELECT @@IDENTITY";
+        // Assemblement du tout pour avoir la rqt entière
+        $debut_rqt = $debut_rqt.')'; $fin_rqt = $fin_rqt.')';
+        // On enlève la dernière virgule dans chaque parenthèse
+        $debut_rqt=str_replace(' ', ',', $debut_rqt); $fin_rqt=str_replace(' ', ',', $fin_rqt);
+        $debut_rqt=str_replace(',)', ')', $debut_rqt); $fin_rqt=str_replace(',)', ')', $fin_rqt);
+        // Assemblement final avec ajout de SELECT @@IDENTITY pour récupérer l'id
+        $rqt = 'INSERT INTO '.$table.$debut_rqt.' VALUE '.$fin_rqt."; SELECT @@IDENTITY";
+        // Execution de la rqt et renvoie des données
         try
         {
             $req = self::$_bdd->prepare($rqt);
@@ -80,12 +87,12 @@ abstract class Manager
     protected function UpdTable($table, $values, $id, $idValue)
     {
         $rqt = "UPDATE ".$table." SET ";
-        $rqt1 = "";
+        $debut_rqt = "";
         foreach($values as $key => $val)
         {
-            $rqt1 = $rqt1.$key." = '".$val."', ";
+            $debut_rqt = $debut_rqt.$key." = '".$val."', ";
         }
-        $rqt = $rqt.$rqt1.'WHERE '.$id.'='.$idValue;
+        $rqt = $rqt.$debut_rqt.'WHERE '.$id.'='.$idValue;
         $rqt=str_replace(', W', ' W', $rqt);
         try
         {
@@ -102,12 +109,12 @@ abstract class Manager
     protected function deleteFromTable($table, $IdValues)
     {
         $rqt = "DELETE FROM ".$table." WHERE ";
-        $rqt1 = "";
+        $debut_rqt = "";
         foreach($IdValues as $key => $val)
         {
-            $rqt1 = $rqt1.$key." = ".$val." AND ";
+            $debut_rqt = $debut_rqt.$key." = ".$val." AND ";
         }
-        $rqt = $rqt.$rqt1.";";
+        $rqt = $rqt.$debut_rqt.";";
         $rqt=str_replace('AND ;', ';', $rqt);
 
         try
