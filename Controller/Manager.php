@@ -23,6 +23,8 @@ abstract class Manager
         return self::$_bdd;
     }
 
+    // ================================= Connexion 
+
     // récupéré toutes les donnée d'une table
     protected function getAll($table, $obj)
     {

@@ -9,14 +9,12 @@
 <html>
     <head>
         <title>
-            Acceuil Student
+            Acceuil Admin
         </title>
+        <link rel="stylesheet" href="../../assets/css">
     </head>
     <body>
-        <?php
-            echo $_SESSION['role'];
-            echo $_SESSION['name'];
-        ?>
-        <a href="../Deconnexion.php">Se déconnecter</a>
+        <?php require '../headers/header_admin.php' ?>
+
     </body>
 </html>
