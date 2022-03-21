@@ -7,14 +7,14 @@ LANGUE
 - FRANCAIS pour :
 
 POUR CREER UN FICHIER
-- Pour créer une vue: ViewActionObjet.php exemples: ViewCreateStudent.php, ViewSearchCompany.php
+- Pour créer une vue: ActionObjet.php exemples: CreateStudent.php, SearchCompany.php
 - Pour créer un fichier controller: ManagerObjet.php exemples: ManagerOffer.php
 - Pour créer un model: NomTable exemples: File.php, AdCmp.php
 
-POUR CREER UNE VARIABLE
+POUR CREER UNE VARIABLE / FICHIER
 - varaiable en ANGLAIS ou FRANCAIS (à choisir)
 - Première lettre en minuscule
-- pas de _
+- pas de "_"
 - A chaque mot une majuscule (sauf premier mot)
 
 PAR RAPPORT AU CSS
