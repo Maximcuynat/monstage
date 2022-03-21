@@ -35,26 +35,30 @@ class Company extends Manager
     function setId_cmp($id)
     {
         if($id < 0)
-        {$this->id_cmp = 1;}
-        else {$this->id_cmp = $id;}
+            $this->id_cmp = 1;
+        else
+            $this->id_cmp = $id;
     }
     function setName($x)
     {
         if($x == "")
-        {$this->Name = "NONE";}
-        else {$this->Name = $x;}
+            $this->Name = "NONE";
+        else
+            $this->Name = $x;
     }
     function setDomain($x)
     {
         if($x == "")
-        {$this->Domain = "NONE";}
-        else {$this->Domain = $x;}
+            $this->Domain = "NONE";
+        else 
+            $this->Domain = $x;
     }
     function setNumber_intern($x)
     {
         if($x < 0)
-        {$this->Number_intern = 0;}
-        else {$this->Number_intern = $x;}
+            $this->Number_intern = 0;
+        else 
+            $this->Number_intern = $x;
     }
 
     // GET

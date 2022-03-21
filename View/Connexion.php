@@ -16,8 +16,7 @@
 
         if ( !$userExist == 0 )
         {
-            echo "Vous exister dans la base de donnée";
-            print_r($userExist);
+            // Créations de la session et de la redirecions vers la page correspondante
         }
     }
 ?>

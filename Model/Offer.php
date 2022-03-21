@@ -36,50 +36,58 @@ class Offer extends Manager
     function setId_offer($x)
     {
         if ($x < 0)
-        {$this->id_offer = 1;}
-        else {$this->id_offer = $x;}
+           $this->id_offer = 1;
+        else 
+           $this->id_offer = $x;
     }
     function setPost($x)
     {
         if ($x == "")
-        {$this->post = "none";}
-        else {$this->post = $x;}
+           $this->post = "none";
+        else
+           $this->post = $x;
     }
     function setSkill($x)
     {
         if ($x == "")
-        {$this->skill = "none";}
-        else {$this->skill = $x;}
+           $this->skill = "none";
+        else 
+           $this->skill = $x;
     }
     function setDuration($x)
     {
         if ($x < 0)
-        {$this->duration = 0;}
-        else {$this->duration = $x;}
+           $this->duration = 0;
+        else
+           $this->duration = $x;
     }
     function setDate($x)
     {
         if ($x == "")
-        {$this->date = "00/00/0000";}
-        else {$this->date = $x;}
+           $this->date = "00/00/0000";
+        else 
+           $this->date = $x;
     }
     function setRemu($x)
     {
         if ($x < 0)
-        {$this->remu = 0;}
-        else {$this->remu = $x;}
+           $this->remu = 0;
+        else 
+           $this->remu = $x;
     }
     function setNb_place($x)
     {
         if ($x < 0)
-        {$this->nb_place = 0;}
-        else {$this->nb_place = $x;}
+           $this->nb_place = 0;
+        else 
+           $this->nb_place = $x;
     }
     function setId_cmp($x)
     {
         if ($x < 0)
-        {$this->id_cmp = 1;}
-        else {$this->id_cmp = $x;}
+           $this->id_cmp = 1;
+        else 
+           $this->id_cmp = $x;
     }
 
     // GET

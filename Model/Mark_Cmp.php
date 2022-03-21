@@ -27,14 +27,16 @@ class Mark_Cmp extends Manager
     function setId_cmp($x)
     {
         if ($x < 0)
-        {$this->id_cmp = 1;}
-        else {$this->id_cmp = $x;}
+            $this->id_cmp = 1;
+        else
+            $this->id_cmp = $x;
     }
     function setValue($x)
     {
         if ($x < 0 && $x > 10)
-        {$this->value = 0;}
-        else {$this->value = $x;}
+            $this->value = 0;
+        else 
+            $this->value = $x;
     }
 
     // GET

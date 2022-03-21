@@ -28,14 +28,16 @@ class PermRole extends Manager
     function setId_perm($x)
     {
         if ($x < 0)
-        {$this->id_perm = 1;}
-        else {$this->id_perm = $x;}
+            $this->id_perm = 1;
+        else
+            $this->id_perm = $x;
     }
     function setId_role($x)
     {
         if ($x < 0)
-        {$this->id_role = 1;}
-        else {$this->id_role = $x;}
+            $this->id_role = 1;
+        else 
+            $this->id_role = $x;
     }
 
     // GET

@@ -35,20 +35,23 @@ class OfferAd extends Manager
     function setId_offer($x)
     {
         if ($x < 0)
-        {$this->id_offer = 1;}
-        else {$this->id_offer = $x;}
+            $this->id_offer = 1;
+        else 
+            $this->id_offer = $x;
     }
     function setId_ad($x)
     {
         if ($x < 0)
-        {$this->id_ad = 1;}
-        else {$this->id_ad = $x;}
+            $this->id_ad = 1;
+        else
+            $this->id_ad = $x;
     }
     function setCity($x)
     {
         if ($x == "")
-        {$this->city = "none";}
-        else {$this->city = $x;}
+            $this->city = "none";
+        else 
+            $this->city = $x;
     }
 
 

@@ -18,9 +18,16 @@ class File extends Manager
     }
 
     // SET
-    function setFile($f) { $this->file = $f; }
+    function setFile($f)
+    {
+        $this->file = $f;
+    }
     // GET
-    function getFile() { return $this->file; }
+    function getFile()
+    {
+        return $this->file;
+    }
+        
 }
 
 ?>

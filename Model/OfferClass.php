@@ -28,14 +28,16 @@ class OfferClass extends Manager
     function setId_offer($x)
     {
         if ($x < 0)
-        {$this->id_offer = 1;}
-        else {$this->id_offer = $x;}
+            $this->id_offer = 1;
+        else 
+            $this->id_offer = $x;
     }
     function setClass($x)
     {
         if ($x == "")
-        {$this->class = "none";}
-        else {$this->class = $x;}
+            $this->class = "none";
+        else 
+            $this->class = $x;
     }
 
     // GET

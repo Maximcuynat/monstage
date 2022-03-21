@@ -28,14 +28,16 @@ class PersClass extends Manager
     function setId_pers($x)
     {
         if ($x < 0)
-        {$this->id_pers = 1;}
-        else {$this->id_pers = $x;}
+            $this->id_pers = 1;
+        else
+            $this->id_pers = $x;
     }
     function setClass($x)
     {
         if ($x == "")
-        {$this->class = "none";}
-        else {$this->class = $x;}
+            $this->class = "none";
+        else 
+            $this->class = $x;
     }
 
     // GET
