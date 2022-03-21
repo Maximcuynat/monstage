@@ -7,7 +7,7 @@ abstract class Manager
     {
         try
         {
-            self::$_bdd = new PDO('mysql:host=localhost;dbname=f1','root');
+            self::$_bdd = new PDO('mysql:host=localhost;dbname=myintership','root');
             self::$_bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
         }
         catch(Exception $e)

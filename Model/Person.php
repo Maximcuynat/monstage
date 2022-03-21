@@ -14,15 +14,17 @@ class Person extends Manager
     {
         $rqt1 = "SELECT ID_Pers FROM Person NATURAL JOIN Pers_Role NATURAL JOIN projet_web.Role WHERE Role = '".$role."';";
         if (!$result = $this->getBdd()->query($rqt1)) 
-        { echo "erreur de requête : $rqt1\n"; die; }
+        { 
+            echo "erreur de requête : $rqt1\n";
+            die;
+        }
         $tab_id = [];
         foreach ($result as $i=>$ligne)
         {
             array_push($tab_id, $ligne['ID_Pers']);
         }
+
         $result->closeCursor();
-        
-        
         $rqt = "SELECT Fname, Lname, City, Class FROM Address NATURAL JOIN Person NATURAL JOIN Pers_Class NATURAL JOIN Class WHERE ID_Pers = ?;";
     }
 

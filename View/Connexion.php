@@ -8,7 +8,9 @@
     if(isset($valider))
     {
         // Faire la demande de connexion à la base de donnée
-
+        require '../Model/Connexion.php';
+        $authentification = new Connexion();
+        
         if( $login == "Maxim" && $pass == "Cuynat" ) // === Verifications de l'identité de la personne
         {   
             // Vérifications du statu : student, pilot, admin
