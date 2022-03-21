@@ -39,7 +39,11 @@ class Mark_Cmp extends Manager
 
     // GET
     function getId_cmp()
-    { return $this->id_cmp; }
+    {
+        return $this->id_cmp;
+    }
     function getValue()
-    { return $this->value; }
+    {
+        return $this->value;
+    }
 }

@@ -23,15 +23,19 @@ class AdCmp extends Manager
     // SET
     function setId_cmp($id)
     {
+        // Faire comme ca
         if($id < 0)
-        {$this->id_cmp = 1;}
-        else {$this->id_cmp = $id;}
+            $this->id_cmp = 1;
+        else
+            $this->id_cmp = $id;
     }
     function setId_ad($id)
     {
+        // Ne pas faire comme ca
         if($id < 0)
-        {$this->id_ad = 1;}
-        else {$this->id_ad = $id;}
+            $this->id_ad = 1;
+        else
+            $this->id_ad = $id;
     }
 
     // GET

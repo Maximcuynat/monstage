@@ -30,6 +30,9 @@ class Opinion extends Manager
     }
 
     // GET
-    function getCom() { return $this->com; }
+    function getCom() 
+    {
+        return $this->com;
+    }
     
 }
