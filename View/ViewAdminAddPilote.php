@@ -18,6 +18,7 @@
 					<option value="Marseille"></option>
 					<?php
 						// On a besoins des adresse disponibles
+						// API ?
 					?>
 				</datalist>
 				<input type="submit" value="Create">
