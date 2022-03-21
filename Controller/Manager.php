@@ -25,6 +25,21 @@ abstract class Manager
 
     // ================================= Connexion 
 
+    protected function selectIdConnexion($mail, $password) // Ajout de l'object
+    {
+        $this->getBdd();
+        $var = [];
+        // SELECT ID_Person FROM person WHERE Mail="lea.laborde@viacesi.fr" AND Pwd="cesi123";
+        $req = self::$_bdd->prepare("SELECT ID_Person FROM Person WHERE Mail = '".$mail."' AND Pwd='".$password."';"); // Error
+        $req->execute();
+        while($data = $req->fetch(PDO::FETCH_ASSOC))
+        {
+            $var[] = new Person($data);
+        }
+        return $var;
+        $req->closeCursor();
+    }
+
     // récupéré toutes les donnée d'une table
     protected function getAll($table, $obj)
     {

@@ -1,22 +1,19 @@
 <?php
-require "../Model/Person.php";
+require_once "../Model/Person.php";
+require_once "Manager.php"; 
 
-class ManagerConnexion
+class ManagerConnexion extends Manager
 {
-    Person $prs; // ??????
+    private Person $prs;
+    
     public function checkIfExist($mail, $password)
     {
-        $prs = new Person();
-        $prs->setMail($mail);
-        $prs->setPwd($password);
+        // Connexion à la base de donnée
+        $this->getBdd();
         // SELECT ID_Person FROM person WHERE Mail="lea.laborde@viacesi.fr" AND Pwd="cesi123";
-        $prs->selectIdConnexion();
-        
-        /*
-         * Vérifier que la personne existe,
-         * Si elle existe, on return, id
-         * Sinon, On renvoie un message d'erreur.
-         */
+        return $this->selectIdConnexion($mail, $password);
     }
+    
+    
 }
 ?>

@@ -3,12 +3,38 @@ require "../Controller/Manager.php";
 
 class Person extends Manager
 {
-    private $id_pers;
-    private $mail;
-    private $pwd;
-    private $fname;
-    private $lname;
-    private $id_ad;
+    private $ID_Person;
+    private $Mail;
+    private $Pwd;
+    private $Fname;
+    private $Lname;
+    private $ID_Ad;
+    /*
+
+    public function __construct(array $data)
+    {
+        $this->hydrate($data);
+    }
+
+    public function hydrate(array $data)
+    {
+        foreach($data as $key => $value)
+        {
+            $method = 'set'.ucfirst($key);
+            if (method_exists($this, $method))
+                $this->$method($value);
+        }
+    }
+
+    public function setNoPil($NoPil)
+    {
+        $NoPil = (int) $NoPil;
+        if($NoPil > 0)
+            $this->_NoPil = $NoPil;
+    }
+    */
+
+    /*
 
     function selectByRole($role)
     {
@@ -26,6 +52,18 @@ class Person extends Manager
 
         $result->closeCursor();
         $rqt = "SELECT Fname, Lname, City, Class FROM Address NATURAL JOIN Person NATURAL JOIN Pers_Class NATURAL JOIN Class WHERE ID_Pers = ?;";
+    }
+
+    public function selectIdConnexion()
+    {
+        $this->getBdd();
+        $var = [];
+        // SELECT ID_Person FROM person WHERE Mail="lea.laborde@viacesi.fr" AND Pwd="cesi123";
+        $req = self::$_bdd->prepare("SELECT ID_Person FROM Person WHERE Mail = '".$this->getMail()."' AND Pwd='".$this->getPwd()."';"); // Error
+        $req->execute();
+        $data = $req->fetch(PDO::FETCH_ASSOC);
+        return $data;
+        $req->closeCursor();
     }
 
     function createPerson($mail, $pwd, $fname, $lname, $id_ad)
@@ -48,13 +86,14 @@ class Person extends Manager
         $IdValues = ['$id_pers' => $id_pers];
         return $this->deleteFromTable('Person', $IdValues);
     }
+    */
 
 
 
 
     //==================================================
     // SET
-    function setId_pers($x)
+    function setID_Person($x)
     {
         if ($x < 0)
         {$this->id_pers = 1;}
@@ -84,7 +123,7 @@ class Person extends Manager
         {$this->lname = "none";}
         else {$this->lname = $x;}
     }
-    function setId_ad($x)
+    function setID_Ad($x)
     {
         if ($x < 0)
         {$this->id_ad = 1;}

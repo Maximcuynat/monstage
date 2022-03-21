@@ -9,23 +9,15 @@
     {
         // Faire la demande de connexion à la base de donnée
         require '../Controller/ManagerConnexion.php';
-        $authentification = new ManagerConnexion();
-        $userData = $authentification->checkIfExist($login, $pass);
-        
-        if( $login == "Maxim" && $pass == "Cuynat" ) // === Verifications de l'identité de la personne
-        {   
-            // Vérifications du statu : student, pilot, admin
-            if($statu == "Student")
-            {
-                $_SESSION['role'] = "Student";
-                $_SESSION['name'] = $login;
-                header("location:Student/indexStudent.php");
-            }
-        }
-        else
+
+        $conex = new ManagerConnexion();
+
+        $userExist = $conex->checkIfExist($login, $pass); // Rajouter ke hachage md5()
+
+        if ( !$userExist == 0 )
         {
-            //
-            $erreur = "Bad login or password"; // In english !!!
+            echo "Vous exister dans la base de donnée";
+            print_r($userExist);
         }
     }
 ?>
