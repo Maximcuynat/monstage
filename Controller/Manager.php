@@ -25,16 +25,17 @@ abstract class Manager
 
     // ================================= Connexion 
 
-    protected function selectIdConnexion($mail, $password) // Ajout de l'object
+    protected function selectIdConnexion($obj, $mail, $password) // Ajout de l'object
     {
         $this->getBdd();
         $var = [];
         // SELECT ID_Person FROM person WHERE Mail="lea.laborde@viacesi.fr" AND Pwd="cesi123";
-        $req = self::$_bdd->prepare("SELECT ID_Person FROM Person WHERE Mail = '".$mail."' AND Pwd='".$password."';"); // Error
+        $req = self::$_bdd->prepare('SELECT ID_Person FROM Person WHERE Mail = "'.$mail.'" AND Pwd="'.$password.'";');
+        // print_r($req);
         $req->execute();
         while($data = $req->fetch(PDO::FETCH_ASSOC))
         {
-            $var[] = new Person($data);
+            $var[] = new $obj($data);
         }
         return $var;
         $req->closeCursor();
@@ -69,7 +70,7 @@ abstract class Manager
     }
 
     // Ajouter une valeur
-    protected function addValueTable($table, $values) // ======================================================================
+    protected function addValueTable($table, $obj, $values)
     {
         // INSERT INTO TB (column) VALUE (valeur)
         // Parathèses de la rqt pour les column et les valeurs
@@ -98,8 +99,11 @@ abstract class Manager
         {
             $req = self::$_bdd->prepare($rqt);
             $req->execute();
-            $data = $req->fetch(PDO::FETCH_ASSOC);
-            return $data;
+            while($data = $req->fetch(PDO::FETCH_ASSOC))
+            {
+                $var[] = new $obj($data);
+            }
+            return $var;
             $req->closeCursor();
         }
         catch(Exception $e)

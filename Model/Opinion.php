@@ -25,8 +25,9 @@ class Opinion extends Manager
     function setCom($x)
     {
         if ($x == "")
-        {$this->com = "none";}
-        else {$this->com = $x;}
+            $this->com = "none";
+        else
+            $this->com = $x;
     }
 
     // GET

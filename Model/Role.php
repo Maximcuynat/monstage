@@ -27,14 +27,16 @@ class Role extends Manager
     function setId_role($id)
     {
         if($id < 0)
-        {$this->id_role = 1;}
-        else {$this->id_role = $id;}
+            $this->id_role = 1;
+        else 
+            $this->id_role = $id;
     }
     function setRole($x)
     {
         if($x == "")
-        {$this->role = "none";}
-        else {$this->role = $x;}
+            $this->role = "none";
+        else 
+            $this->role = $x;
     }
 
     // GET

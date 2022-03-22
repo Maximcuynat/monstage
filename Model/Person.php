@@ -9,8 +9,8 @@ class Person extends Manager
     private $Fname;
     private $Lname;
     private $ID_Ad;
-    /*
-
+    
+    
     public function __construct(array $data)
     {
         $this->hydrate($data);
@@ -32,7 +32,6 @@ class Person extends Manager
         if($NoPil > 0)
             $this->_NoPil = $NoPil;
     }
-    */
 
     /*
 
@@ -93,48 +92,72 @@ class Person extends Manager
 
     //==================================================
     // SET
-    function setID_Person($x)
+    public function setID_Person($x)
     {
         if ($x < 0)
-        {$this->id_pers = 1;}
-        else {$this->id_pers = $x;}
+            $this->id_pers = "none";
+        else 
+            $this->id_pers = $x;
     }
-    function setMail($x)
+    public function setMail($x)
     {
         if ($x == "")
-        {$this->mail = "none";}
-        else {$this->mail = $x;}
+            $this->mail = "none";
+        else 
+            $this->mail = $x;
     }
-    function setPwd($x)
+    public function setPwd($x)
     {
         if ($x == "")
-        {$this->pwd = "none";}
-        else {$this->pwd = $x;}
+            $this->pwd = "none";
+        else 
+            $this->pwd = $x;
     }
-    function setFname($x)
+    public function setFname($x)
     {
         if ($x == "")
-        {$this->fname = "none";}
-        else {$this->fname = $x;}
+            $this->fname = "none";  
+        else 
+            $this->fname = $x;
     }
-    function setLname($x)
+    public function setLname($x)
     {
         if ($x == "")
-        {$this->lname = "none";}
-        else {$this->lname = $x;}
+            $this->lname = "none";
+        else
+            $this->lname = $x;
     }
-    function setID_Ad($x)
+    public function setID_Ad($x)
     {
         if ($x < 0)
-        {$this->id_ad = 1;}
-        else {$this->id_ad = $x;}
+            $this->id_ad = 1;
+        else
+            $this->id_ad = $x;
     }
 
     // GET
-    function getId_pers() { return $this->id_pers; }
-    function getMail() { return $this->mail; }
-    function getPwd() { return $this->pwd; }
-    function getFname() { return $this->fname; }
-    function getLname() { return $this->lname; }
-    function getId_ad() { return $this->id_ad; }
+    public function getID_Person() 
+    {
+        return $this->id_pers;
+    }
+    public function getMail() 
+    { 
+        return $this->mail;
+    }
+    public function getPwd() 
+    { 
+        return $this->pwd;
+    }
+    public function getFname() 
+    { 
+        return $this->fname;
+    }
+    public function getLname() 
+    { 
+        return $this->lname;
+    }
+    public function getID_Ad() 
+    { 
+        return $this->id_ad;
+    }
 }

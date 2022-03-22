@@ -7,13 +7,6 @@ class OfferAd extends Manager
     private $id_ad;
     private $city;
 
-    function createOfferAd()
-    {
-        $this->getBdd();
-        $values = ['id_offer' => $this->getId_offer(), 'id_ad' => $this->getId_ad()];
-        $this->addValueTable('Offer_Ad', $values);
-    }
-
     function deleteOfferAd($id_offer, $id_ad)
     {
         $this->getBdd();

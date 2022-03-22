@@ -1,22 +1,32 @@
 <?php
     session_start();
+    
+    require_once "../Controller/ManagerConnexion.php";
+
     @$login = $_POST['login'];
     @$pass = $_POST['pass'];
     @$statu = $_POST['statu'];
     @$valider = $_POST['valider'];
     $erreur = "";
+    
     if(isset($valider))
     {
         // Faire la demande de connexion à la base de donnée
-        require '../Controller/ManagerConnexion.php';
+        
 
         $conex = new ManagerConnexion();
-
-        $userExist = $conex->checkIfExist($login, $pass); // Rajouter ke hachage md5()
-
-        if ( !$userExist == 0 )
+        
+        $InfoPersonne = $conex->checkIfExist($login, $pass); // Rajouter ke hachage md5()
+        $id = $InfoPersonne[0]->id_pers; // Erreur ici
+        if ( $id != "" )
         {
-            // Créations de la session et de la redirecions vers la page correspondante
+            @$_SESSION['id'] = $id;
+            @$_SESSION['connexion'] = $conex;
+            header("location:Student/indexStudent.php");
+        }
+        else
+        {
+            $erreur = "Vous n'avez pas de compte sur ce site";
         }
     }
 ?>

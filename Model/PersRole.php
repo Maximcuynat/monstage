@@ -29,14 +29,16 @@ class PersRole extends Manager
     function setId_pers($x)
     {
         if ($x < 0)
-        {$this->id_pers = 1;}
-        else {$this->id_pers = $x;}
+            $this->id_pers = 1;
+        else 
+            $this->id_pers = $x;
     }
     function setRole($x)
     {
         if ($x < 0)
-        {$this->id_role = 1;}
-        else {$this->id_role = $x;}
+            $this->id_role = 1;
+        else
+            $this->id_role = $x;
     }
 
     // GET

@@ -1,9 +1,21 @@
 <?php
     session_start();
-    if(@$_SESSION['role'] != "Student")
+    
+    if(@$_SESSION['id'] == "")
     {
-        header("location:../index.php");
+        header("location:../Connexion.php");
         exit();
+    }
+    else
+    {   
+        $id = @$_SESSION['id'];
+        // Récupération des informations utilisateur
+        
+        $conex = new ManagerConnexion();
+
+        $userInfo = $conex->getUserInfo($id);
+        print_r($userInfo);
+
     }
 ?>
 <html>
@@ -13,10 +25,8 @@
         </title>
     </head>
     <body>
-        <?php
-            echo $_SESSION['role'];
-            echo $_SESSION['name'];
-        ?>
+        <?php require 'header.php'; ?>
+        <!-- A garder , il est obligatoire !!!! -->
         <a href="../Deconnexion.php">Se déconnecter</a>
     </body>
 </html>
