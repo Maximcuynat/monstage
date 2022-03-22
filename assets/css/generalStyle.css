@@ -85,9 +85,10 @@
 .filters {
     position: fixed;
     z-index: 2;
-    top: 10;
-    left: 2;
-    height: 8rem;
+    top: 20rem;
+    left: 4rem;
+    width: 10rem;
+    height: max-content;
     background-color: #9DADC9;
     padding-top: 2%;
     text-align: center;
