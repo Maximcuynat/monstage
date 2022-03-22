@@ -1,0 +1,36 @@
+.flex {
+    display: flex;
+}
+
+.sectionstats {
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+    margin: auto;
+    margin-top: 4rem;
+    margin-bottom: 10rem;
+}
+
+
+/*la section pour les colonnes de bulle*/
+
+.smallformsection {
+    position: relative;
+    margin-top: 1rem;
+    width: 10rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.Form {
+    background: linear-gradient(0deg, rgba(227, 154, 154, 0.2), rgba(227, 154, 154, 0.2)), #FFF1F1;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin: 1.5rem;
+    padding: 1%;
+    width: 20rem;
+}
+
+.titlestat {
+    text-align: end;
+}
